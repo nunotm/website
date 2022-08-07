@@ -2,29 +2,29 @@ from django.shortcuts import render
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.collections import LineCollection
-from matplotlib.colors import ListedColormap, BoundaryNorm
-import matplotlib.ticker as mtick
-import seaborn as sns
-sns.set()
-
-import statsmodels.api as sm
-from sklearn.linear_model import LinearRegression
-from sklearn.feature_selection import f_regression
-from sklearn.preprocessing import StandardScaler, Normalizer
-from sklearn.cluster import KMeans
-
-from datetime import datetime
-from datetime import timedelta
-from datetime import time
-
-from calendar import monthrange
-
-from scipy.stats import norm
-from scipy.stats import t
-
-import sqlite3
+# import matplotlib.pyplot as plt
+# from matplotlib.collections import LineCollection
+# from matplotlib.colors import ListedColormap, BoundaryNorm
+# import matplotlib.ticker as mtick
+# import seaborn as sns
+# sns.set()
+#
+# import statsmodels.api as sm
+# from sklearn.linear_model import LinearRegression
+# from sklearn.feature_selection import f_regression
+# from sklearn.preprocessing import StandardScaler, Normalizer
+# from sklearn.cluster import KMeans
+#
+# from datetime import datetime
+# from datetime import timedelta
+# from datetime import time
+#
+# from calendar import monthrange
+#
+# from scipy.stats import norm
+# from scipy.stats import t
+#
+# import sqlite3
 
 def import_data(db_file):
     con = sqlite3.connect(db_file)
