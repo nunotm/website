@@ -102,7 +102,7 @@ from django.shortcuts import render
 # Create your views here.
 def dashboard(request):
 #    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = call_import_data()
-    return render(request)#, 'gym_classes/dashboard.html', {"classes":raw_data_attendance})
+    return render(request, 'gym_classes/dashboard.html')#, {"classes":raw_data_attendance})
 
 
 def class_manager(request):
