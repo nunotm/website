@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . import classes_jupyter
+from django.contrib.auth.decorators import login_required
 
 import numpy as np
 import pandas as pd
@@ -10,7 +11,8 @@ from datetime import datetime
 #   return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
 # Create your views here.
-def dashboard(request):
+@login_required
+def agresso(request):
     con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = classes_jupyter.import_data("classes.db")
 
     mes = 7
@@ -54,11 +56,13 @@ def dashboard(request):
 
     #pd.set_option('display.max_columns', None)
 
-    return render(request, 'gym_classes/dashboard.html', {"agresso":agresso})
+    return render(request, 'gym_classes/agresso.html', {"agresso":agresso})
 
-
+@login_required
 def class_manager(request):
     return render(request, 'gym_classes/class_manager.html')
 
+
+@login_required
 def content_manager(request):
     return render(request, 'gym_classes/content_manager.html')

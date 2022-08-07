@@ -47,7 +47,7 @@
                 <a class="nav-link" href="{% url 'cv:all_courses' %}">Courses</a>
             </li>
             {% if request.user.is_authenticated %}
-              <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:dashboard' %}">Dashboard</a></li>
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:agresso' %}">Agresso</a></li>
               <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:class_manager' %}">Classes</a></li>
               <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:content_manager' %}">Contents</a></li>
             {% endif %}

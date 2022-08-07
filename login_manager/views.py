@@ -35,7 +35,7 @@ def login_user(request):
             return render(request, 'login_manager/login_user.html', {'form':AuthenticationForm(), 'error':'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('gym_classes:dashboard')
+            return redirect('gym_classes:agresso')
 
 @login_required
 def logoutuser(request):
