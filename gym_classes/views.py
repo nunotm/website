@@ -9,11 +9,11 @@ import matplotlib.ticker as mtick
 import seaborn as sns
 sns.set()
 
-#import statsmodels.api as sm
-#from sklearn.linear_model import LinearRegression
-#from sklearn.feature_selection import f_regression
-#from sklearn.preprocessing import StandardScaler, Normalizer
-#from sklearn.cluster import KMeans
+import statsmodels.api as sm
+from sklearn.linear_model import LinearRegression
+from sklearn.feature_selection import f_regression
+from sklearn.preprocessing import StandardScaler, Normalizer
+from sklearn.cluster import KMeans
 
 #from datetime import datetime
 #from datetime import timedelta
