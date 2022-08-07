@@ -8,7 +8,13 @@ from . import classes_jupyter
 # Create your views here.
 def dashboard(request):
     con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = classes_jupyter.import_data("classes.db")
-    return render(request, 'gym_classes/dashboard.html', {"classes":raw_data_attendance})
+
+    mes = 8
+    ano = 2022
+
+    agresso = classes_jupyter.agresso(mes, ano,raw_data_attendance,raw_data_payers)
+    
+    return render(request, 'gym_classes/dashboard.html', {"agresso":agresso})
 
 
 def class_manager(request):
