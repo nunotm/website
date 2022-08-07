@@ -27,11 +27,11 @@ from scipy.stats import t
 import sqlite3
 
 def import_data(db_file):
-    # con = sqlite3.connect(db_file)
-    # raw_data_attendance = pd.read_sql_query("SELECT * from ATTENDANCE", con)
-    # raw_data_classes = pd.read_sql_query("SELECT * from CLASSES", con)
-    # raw_data_payers = pd.read_sql_query("SELECT * from PAYERS", con)
-    # raw_data_rv = pd.read_sql_query("SELECT * from RECIBOS_VERDES", con)
+    con = sqlite3.connect(db_file)
+    raw_data_attendance = pd.read_sql_query("SELECT * from ATTENDANCE", con)
+    raw_data_classes = pd.read_sql_query("SELECT * from CLASSES", con)
+    raw_data_payers = pd.read_sql_query("SELECT * from PAYERS", con)
+    raw_data_rv = pd.read_sql_query("SELECT * from RECIBOS_VERDES", con)
 
     # raw_data_attendance.sort_values(by=["DATE", "TIME"])
     #
