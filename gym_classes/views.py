@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-import numpy as np
-import pandas as pd
+#import numpy as np
+#import pandas as pd
 # import matplotlib.pyplot as plt
 # from matplotlib.collections import LineCollection
 # from matplotlib.colors import ListedColormap, BoundaryNorm
