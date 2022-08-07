@@ -1,0 +1,62 @@
+{% extends "cv/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="font-weight-bold text-center">Personal Information</h1>
+<hr />
+
+<br />
+<br />
+
+<div class="col-md-10">
+  <table width="100%">
+    <tr>
+      <td>
+        <h6><b>First Name:</b> Nuno</h6>
+      </td>
+      <td>
+        <h6><b>Mobile Phone:</b> (+351) 91 809 54 66</h6>
+      </td>
+    </tr>
+      <tr>
+        <td>
+          <h6><b>Middle Name:</b> Tiago</h6>
+        </td>
+        <td>
+          <h6><b>E-mail:</b> <a href="mailto:nunotiagomartins@icloud.com">nunotiagomartins@icloud.com</a></h6>
+        </td>
+      </tr>
+        <tr>
+          <td>
+            <h6><b>Last Name:</b> Martins</h6>
+          </td>
+          <td>
+          </td>
+        </tr>
+  </table>
+<br>
+</div>
+<hr />
+<div class="col-md-15">
+<p align="justify">I was born and raised in Lisbon, where I studied and still currently work and live.</p>
+<br />
+<p align="justify">Having studied at the German School of Lisbon (where i got my 'Abitur') allowed me to learn not only German, but English and French as well (and, later, Spanish). This also turned out to be my first multicultural experience, one that would turned out to be fundamentally formative.</p>
+<br />
+<p align="justify">I then proceeded with my education at Instituto Superior Técnico - University of Lisbon, where I got my MsC in Engineering Physics with a major in Financial Mathematics. It was also there I started my career, as researcher, after which I got into the corporate world via Maksen, a consultanting company, where I stayed for two years and took part in projects in the finance and banking area, particularly in risk management.</p>
+<br />
+<p align="justify">During these 2 years I was starting the development of a PhD programme in Financial Mathematics, starting in 2014. In the meantime, I planned on getting back to the academical world, so I went briefly back to research at Instituto Superior Técnico, knowing this would be a stepping stone before applying to a research grant ISEL - University Of Lison. In early 2014 I applied, and was awarded, this grant; however, due to family issues and the financial crisis, I felt the most responsible choice at that time would be to returne to Consultancy.</p>
+<br />
+<p align="justify">As such, from 2014 to 2019, I worked as a Consultant, first at Aubay and in 2015 at the Ministry of Finance. In fact, 2015 marked the year I started working closely to politics and in the public sector, first at the Unit for Monitoring of the Public Enterprises Sector, then at the Portuguese Treasury and Debt Management office (where I still work to this day) and, from 2020 to 2021, for a limited time during the Portuguese Presidency of the Council of the European Union, at the Cabinet of the Secretary of State for Finance.</p>
+<br />
+<p align="justify">Additionally, from 2015 to 2017 and parallel to my full time job, I studied to become a fitness instructor. Since 2017 I have worked part time a Fitness Instructor the the Health Clubs chain Holmes Place and Pump Fitness Spirit.</p>
+<br />
+<p align="justify">On a more personal level, I very much enjoy whenever I'm able to travel, my latest trip having been in july 2022 to the north of Wales (Snowdonia) and the northwest of England (Liverpool). Additionally, aside from more common interests such as reading, cinema (particularly enjoy attending cinema festivals), or music, I also enjoy playing the piano at an amateur level, especially modern alt-rock music. Another passion of mine are Escape Games/Escape Rooms, mainly for the puzzle/cooperative problem solving and practical aspects associated with them. Finally, I have been involved in a few volunteering activites, the latest taking place in 2019, at the Queer Film Festival, in Lisbon.</p>
+</div>
+<hr />
+<div class="text-center">
+    UK only: <a href="{% url 'cv:equality_act' %}">Equality Act 2010</a>
+</div>
+
+{% endblock %}

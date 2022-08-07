@@ -1,0 +1,65 @@
+{% extends "cv/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="font-weight-bold text-center">Equality Act 2010 (UK only)</h1>
+<hr />
+
+<br />
+<br />
+
+<div class="col-md-10">
+<table width = "125%">
+  <tr>
+    <td><h6><b>First Name:</b> Nuno</h6></td>
+    <td><h6><b>Age:</b> {{age}} years old</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>Middle Name:</b> Tiago</h6></td>
+    <td><h6><b>Disabilities:</b> No</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>Surnames:</b> Henriques Lança Ferreira Martins</h6></td>
+    <td><h6><b>First-generation university graduate:</b> No</h6></td>
+  </tr>
+    <td><br /></td>
+    <td><br /></td>
+  </tr>
+  <tr>
+    <td><h6><b>Address:</b> Rua do Jasmim 6, 2.º Esq</h6></td>
+    <td><h6><b>Gender Identity:</b> Male</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>Postal Code:</b> 1200-229</h6></td>
+    <td><h6><b>Orientation:</b> Gay Man</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>City:</b> Lisboa</h6></td>
+    <td><h6><b>Identify as transgender:</b> No</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>Country:</b> Portugal</h6></td>
+    <td><h6><b>Religion or beliefs:</b> No religion or strong belief</h6></td>
+  </tr>
+  <tr>
+    <td><h6><b>Nationality:</b> Portuguese</h6></td>
+    <td><h6><b>Ethnic group or ethnicity:</b> White - Other</h6></td>
+  </tr>
+</table>
+<br />
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<div class="text-left">
+    <a href="{% url 'cv:personal' %}"> < Back to personal information</a>
+</div>
+<p></p>
+
+
+{% endblock %}

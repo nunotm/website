@@ -1,0 +1,23 @@
+{% extends "cv/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Dasboard</h1>
+        </div>
+    </div>
+
+<table width="100%">
+  {% for idx, row in classes.iterrows %}
+    <tr>
+      <td><p>{{ row.DATE|date:'Y-m-d' }}</p></td>
+      <td><p>{{ row.CLUB }}</p></td>
+      <td><p>{{ row.CLASS }}</p></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "cv/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-10">
+<h3>{{ position.position }}</h3>
+<h5>{{ position.entity }}</h5>
+</div>
+
+
+<div class="col-md-10">
+{% if position.current %}
+    <h8 class="text-center text-muted mb-5">{{ position.start }} to Present</h8>
+{% else %}
+    <h8 class="text-center text-muted mb-5">{{ position.start }} to {{ position.end }}</h8>
+{% endif %}
+</div>
+
+<br>
+
+<div class="col-md-10"><h6><p>Summary</p></h6></div>
+<div class="col-md-10"><h7><p align="justify">{{ position.description|safe }}</p></h7></div>
+<br>
+<div class="col-md-10"><h6><p>Achievements</p></h6></div>
+<div class="col-md-10">
+{% for achievement in achievements %}
+    <h7><p align="justify">{{ achievement|safe }}</p></h7>
+{% endfor %}
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<div class="text-left">
+    <a href="{% url 'cv:home' %}"> < Back to Projects </a>
+</div>
+<p></p>
+
+{% endblock %}

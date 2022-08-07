@@ -1,0 +1,97 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" href="{% static "cv/custom.css" %}"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="icon" href="{% static 'cv/nlogo.jpg' %}">
+
+  <!-- <link rel="icon" type="image/png" href="{% static "cv/Logo.png" %}"> -->
+
+<<<<<<< Updated upstream
+  <title>Nuno T. Martins</title>
+=======
+  <title>Nuno T. Martins teste 100</title>
+>>>>>>> Stashed changes
+</head>
+
+<body>
+  <nav id="topNav" class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'cv:personal' %}">
+        <!-- <img src="{% static "cv/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo"> -->
+        <span>Nuno Tiago Martins</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cv:home' %}">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cv:education' %}">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cv:all_courses' %}">Courses</a>
+            </li>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:dashboard' %}">Dashboard</a></li>
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:class_manager' %}">Classes</a></li>
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'gym_classes:content_manager' %}">Contents</a></li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% static 'cv/CV.pdf' %}" target="_blank">
+                <img src="{% static 'cv/CVlogo.jpg' %}" width="25" height="30" class="d-inline-block align-center">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/nuno-tm/" target="_blank">
+                <img src="{% static 'cv/linkedinlogo2.png' %}" width="30" height="30" class="d-inline-block align-center">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:nunotiagomartins@icloud.com" target="_blank">
+                <img src="{% static 'cv/maillogo.png' %}" width="40" height="30" class="d-inline-block align-center">
+              </a>
+            </li>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'login_manager:logoutuser' %}">Log Out</a></li>
+            {% else %}
+              <li class="nav-item"></li><a class="nav-link" href="{% url 'login_manager:login_user' %}">Log In</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% block content %}{% endblock %}
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+</body>
+
+</html>

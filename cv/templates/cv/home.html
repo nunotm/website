@@ -1,0 +1,50 @@
+{% extends "cv/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h1 class="font-weight-bold text-center">Projects</h1>
+<hr />
+
+{% for position in positions %}
+{% if position.current %}
+    <div class="row justify-content-center my-3">
+    <div class="col-md-10">
+        <a href="{% url 'cv:detail' position.id %}">
+        <h4>{{ position.position }}</h4>
+        <h6>{{ position.entity }}</h6>
+        </a>
+        <h7 class="text-muted">{{ position.start }} to Present</h7> <!-- |start:'M d Y'|upper  -->
+        <p></p>
+        <h10>{{ position.description|striptags|truncatechars:200 }}</h10>
+    </div>
+    </div>
+    <br>
+    {% else %}
+{% endif %}
+{% endfor %}
+
+<hr>
+<br>
+
+{% for position in positions %}
+{% if not position.current %}
+    <div class="row justify-content-center my-3">
+    <div class="col-md-10">
+        <a href="{% url 'cv:detail' position.id %}">
+        <h4>{{ position.position }}</h4>
+        <h6>{{ position.entity }}</h6>
+        </a>
+        <h7 class="text-muted">{{ position.start }} to {{ position.end }}</h7>
+        <p></p>
+        <h10>{{ position.description|striptags|truncatechars:200 }}</h10>
+    </div>
+    </div>
+    <br>
+    {% else %}
+{% endif %}
+{% endfor %}
+
+{% endblock %}
