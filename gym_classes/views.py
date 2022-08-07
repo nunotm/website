@@ -9,22 +9,22 @@ import matplotlib.ticker as mtick
 import seaborn as sns
 sns.set()
 
-import statsmodels.api as sm
-from sklearn.linear_model import LinearRegression
-from sklearn.feature_selection import f_regression
-from sklearn.preprocessing import StandardScaler, Normalizer
-from sklearn.cluster import KMeans
+#import statsmodels.api as sm
+#from sklearn.linear_model import LinearRegression
+#from sklearn.feature_selection import f_regression
+#from sklearn.preprocessing import StandardScaler, Normalizer
+#from sklearn.cluster import KMeans
 
-from datetime import datetime
-from datetime import timedelta
-from datetime import time
+#from datetime import datetime
+#from datetime import timedelta
+#from datetime import time
 
-from calendar import monthrange
+#from calendar import monthrange
 
-from scipy.stats import norm
-from scipy.stats import t
+#from scipy.stats import norm
+#from scipy.stats import t
 
-import sqlite3
+#import sqlite3
 
 # def import_data(db_file):
 #     con = sqlite3.connect(db_file)
