@@ -93,7 +93,7 @@ def import_data(db_file):
         if row["CAPACITY"]!=0:
             raw_data_attendance.loc[ind,"ATTENDANCE % CAPACITY"] = row["ATTENDANCE"] / row["CAPACITY"]
 
-    return 0#con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
+    return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
 #def call_import_data():
 #   con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
