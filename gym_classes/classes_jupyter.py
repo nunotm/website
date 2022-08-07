@@ -415,4 +415,5 @@ def agresso(mes, ano, raw_data, payers_data):
         agresso.loc[agresso.index[-1]][dia] = agresso[dia].sum()
 
     pd.set_option('display.max_columns', None)
+
     return agresso

@@ -21,6 +21,35 @@
 </table>
 -->
 
-{{agresso}}
+<table>
+  <tr>
+    <td width="10%" >Clube</td>
+    <td width="2%" >Duração</td>
+    <td width="2%" >LWP</td>
+    {% for col in agresso.columns %}
+      <td width="2%" bgcolor="#ADD8E6">
+        {{col}}
+      </td>
+    {% endfor %}
+  </tr>
+    {% for index, row in agresso.iterrows %}
+      <tr>
+        <td width="10%">
+          {{index.0}}
+        </td>
+          <td width="2%">
+            {{index.1}}
+          </td>
+            <td width="2%">
+              {{index.2}}
+            </td>
+        {% for cell in row %}
+          <td width="2%">
+            {{cell}}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+</table>
 
 {% endblock %}
