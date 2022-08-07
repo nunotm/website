@@ -26,12 +26,12 @@ from scipy.stats import t
 
 import sqlite3
 
-def import_data(db_file):
-    con = sqlite3.connect(db_file)
-    raw_data_attendance = pd.read_sql_query("SELECT * from ATTENDANCE", con)
-    raw_data_classes = pd.read_sql_query("SELECT * from CLASSES", con)
-    raw_data_payers = pd.read_sql_query("SELECT * from PAYERS", con)
-    raw_data_rv = pd.read_sql_query("SELECT * from RECIBOS_VERDES", con)
+#def import_data(db_file):
+    # con = sqlite3.connect(db_file)
+    # raw_data_attendance = pd.read_sql_query("SELECT * from ATTENDANCE", con)
+    # raw_data_classes = pd.read_sql_query("SELECT * from CLASSES", con)
+    # raw_data_payers = pd.read_sql_query("SELECT * from PAYERS", con)
+    # raw_data_rv = pd.read_sql_query("SELECT * from RECIBOS_VERDES", con)
 
     # raw_data_attendance.sort_values(by=["DATE", "TIME"])
     #
@@ -93,7 +93,7 @@ def import_data(db_file):
     #     if row["CAPACITY"]!=0:
     #         raw_data_attendance.loc[ind,"ATTENDANCE % CAPACITY"] = row["ATTENDANCE"] / row["CAPACITY"]
 
-   return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
+   # return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
 #def call_import_data():
 #   con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
