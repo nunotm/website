@@ -7,7 +7,7 @@ from . import classes_jupyter
 
 # Create your views here.
 def dashboard(request):
-    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
+    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = classes_jupyter.import_data("classes.db")
     return render(request, 'gym_classes/dashboard.html', {"classes":raw_data_attendance})
 
 
