@@ -95,13 +95,13 @@ def import_data(db_file):
 
    return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
-def call_import_data():
-   con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
-   return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
+#def call_import_data():
+#   con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
+#   return con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
 # Create your views here.
 def dashboard(request):
-#    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = call_import_data()
+#    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
     return render(request, 'gym_classes/dashboard.html')#, {"classes":raw_data_attendance})
 
 
