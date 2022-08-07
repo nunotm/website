@@ -45,53 +45,53 @@ def import_data(db_file):
     raw_data_attendance["WEEKDAY"]=raw_data_attendance["WEEKDAY"].replace(to_replace=8, value=1)
     raw_data_classes["STUDIO"] = raw_data_classes["STUDIO"].fillna("")
 
-    # raw_data_rv["DATA_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
-    # raw_data_rv["INICIO_PERIODO"] = raw_data_rv["INICIO_PERIODO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
-    # raw_data_rv["FIM_PERIODO"] = raw_data_rv["FIM_PERIODO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
-    #
-    # raw_data_rv["ANO_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: x.year)
-    # raw_data_rv["MES_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: x.month)
-    #
-    #
-    # raw_data_attendance["CAPACITY"]=pd.DataFrame(np.zeros_like(raw_data_attendance.index))
-    # for ind, row in raw_data_attendance[raw_data_attendance["DAY_DIFF"]<=0].iterrows():
-    #     capacity_df = raw_data_classes[(raw_data_classes["WEEKDAY"]==row["WEEKDAY"]) &
-    #                                (raw_data_classes["CLUB"]==row["CLUB"]) &
-    #                                (raw_data_classes["CLASS"]==row["CLASS"]) &
-    #                                (raw_data_classes["TIME"]==row["TIME"]) &
-    #                                (raw_data_classes["DURATION"]==row["DURATION"])]
-    #
-    #     capacity_df = capacity_df[capacity_df["END_DATE"]>=row["DATE"]]
-    #
-    #     try:
-    #         capacity_df = capacity_df[capacity_df["END_DATE"]==min(capacity_df["END_DATE"])]
-    #     except:
-    #         continue
-    #
-    #     if len(raw_data_classes) > 1:
-    #         capacity_df=capacity_df[capacity_df["STUDIO"]!=""]
-    #
-    #     try:
-    #         raw_data_attendance.loc[ind,"CAPACITY"] = capacity_df["CAPACITY"].iloc[0]
-    #     except:
-    #         continue
-    #
-    # raw_data_attendance["RESERVATIONS % CAPACITY"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
-    # raw_data_attendance["ATTENDANCE % RESERVATIONS"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
-    # raw_data_attendance["ATTENDANCE % CAPACITY"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
-    #
-    #
-    # for ind, row in raw_data_attendance.iterrows():
-    #
-    #
-    #     if row["CAPACITY"]!=0:
-    #         raw_data_attendance.loc[ind,"RESERVATIONS % CAPACITY"] = row["RESERVATIONS"] / row["CAPACITY"]
-    #
-    #     if row["RESERVATIONS"]!=0:
-    #         raw_data_attendance.loc[ind,"ATTENDANCE % RESERVATIONS"] = row["ATTENDANCE"] / row["RESERVATIONS"]
-    #
-    #     if row["CAPACITY"]!=0:
-    #         raw_data_attendance.loc[ind,"ATTENDANCE % CAPACITY"] = row["ATTENDANCE"] / row["CAPACITY"]
+    raw_data_rv["DATA_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    raw_data_rv["INICIO_PERIODO"] = raw_data_rv["INICIO_PERIODO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    raw_data_rv["FIM_PERIODO"] = raw_data_rv["FIM_PERIODO"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+
+    raw_data_rv["ANO_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: x.year)
+    raw_data_rv["MES_EMISSAO"] = raw_data_rv["DATA_EMISSAO"].apply(lambda x: x.month)
+
+
+    raw_data_attendance["CAPACITY"]=pd.DataFrame(np.zeros_like(raw_data_attendance.index))
+    for ind, row in raw_data_attendance[raw_data_attendance["DAY_DIFF"]<=0].iterrows():
+        capacity_df = raw_data_classes[(raw_data_classes["WEEKDAY"]==row["WEEKDAY"]) &
+                                   (raw_data_classes["CLUB"]==row["CLUB"]) &
+                                   (raw_data_classes["CLASS"]==row["CLASS"]) &
+                                   (raw_data_classes["TIME"]==row["TIME"]) &
+                                   (raw_data_classes["DURATION"]==row["DURATION"])]
+
+        capacity_df = capacity_df[capacity_df["END_DATE"]>=row["DATE"]]
+
+        try:
+            capacity_df = capacity_df[capacity_df["END_DATE"]==min(capacity_df["END_DATE"])]
+        except:
+            continue
+
+        if len(raw_data_classes) > 1:
+            capacity_df=capacity_df[capacity_df["STUDIO"]!=""]
+
+        try:
+            raw_data_attendance.loc[ind,"CAPACITY"] = capacity_df["CAPACITY"].iloc[0]
+        except:
+            continue
+
+    raw_data_attendance["RESERVATIONS % CAPACITY"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
+    raw_data_attendance["ATTENDANCE % RESERVATIONS"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
+    raw_data_attendance["ATTENDANCE % CAPACITY"] = pd.DataFrame(np.zeros_like(raw_data_attendance.index))
+
+
+    for ind, row in raw_data_attendance.iterrows():
+
+
+        if row["CAPACITY"]!=0:
+            raw_data_attendance.loc[ind,"RESERVATIONS % CAPACITY"] = row["RESERVATIONS"] / row["CAPACITY"]
+
+        if row["RESERVATIONS"]!=0:
+            raw_data_attendance.loc[ind,"ATTENDANCE % RESERVATIONS"] = row["ATTENDANCE"] / row["RESERVATIONS"]
+
+        if row["CAPACITY"]!=0:
+            raw_data_attendance.loc[ind,"ATTENDANCE % CAPACITY"] = row["ATTENDANCE"] / row["CAPACITY"]
 
     return 0#con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv
 
