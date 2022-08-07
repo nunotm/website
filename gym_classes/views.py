@@ -101,8 +101,8 @@ def import_data(db_file):
 
 # Create your views here.
 def dashboard(request):
-#    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
-    return render(request, 'gym_classes/dashboard.html')#, {"classes":raw_data_attendance})
+    con, raw_data_attendance, raw_data_classes, raw_data_payers, raw_data_rv = import_data("classes.db")
+    return render(request, 'gym_classes/dashboard.html', {"classes":raw_data_attendance})
 
 
 def class_manager(request):
