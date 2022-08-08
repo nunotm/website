@@ -2,24 +2,128 @@
 
 {% load static %}
 
+<style>
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+
 {% block content %}
 <div class="row justify-content-center mt-5">
-        <div class="col-md-7 text-center">
+  <div class="col-md-7 text-center">
+    <h1>Agresso</h1>
+  </div>
+</div>
 
-                 <h1>Agresso</h1>
-        </div>
-    </div>
-<!--
-<table width="100%">
-  {% for idx, row in classes.iterrows %}
+<hr />
+<br />
+
+<!--<form mthod="POST">
+  {% csrf_token %}
+  <table width="50%">
     <tr>
-      <td><p>{{ row.DATE|date:'Y-m-d' }}</p></td>
-      <td><p>{{ row.CLUB }}</p></td>
-      <td><p>{{ row.CLASS }}</p></td>
-  </tr>
-  {% endfor %}
-</table>
+      <td>
+        <div class="custom-select">
+          <select>
+            <option value="0">Select month:</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>-->
+<!--      </td>
+        <td>
+          <div class="custom-select">
+            <select>
+              <option value="0">Select year:</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+    </table>
+</form>
 -->
+<br />
+<hr />
+<br />
+
+<div class="col-md-10">
 
 <table>
   <tr>
@@ -51,5 +155,6 @@
       </tr>
     {% endfor %}
 </table>
+</div>
 
 {% endblock %}
