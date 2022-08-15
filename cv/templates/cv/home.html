@@ -19,7 +19,7 @@
         <h4>{{ position.position }}</h4>
         <h6>{{ position.entity }}</h6>
         </a>
-        <h7 class="text-muted">{{ position.start }} to Present</h7> <!-- |start:'M d Y'|upper  -->
+        <h7 class="text-muted">{{ position.start }} – Ongoing</h7> <!-- |start:'M d Y'|upper  -->
         <p></p>
         <h10>{{ position.description|striptags|truncatechars:200 }}</h10>
     </div>
@@ -40,7 +40,7 @@
         <h4>{{ position.position }}</h4>
         <h6>{{ position.entity }}</h6>
         </a>
-        <h7 class="text-muted">{{ position.start }} to {{ position.end }}</h7>
+        <h7 class="text-muted">{{ position.start }} – {{ position.end }}</h7>
         <p></p>
         <h10>{{ position.description|striptags|truncatechars:200 }}</h10>
     </div>
